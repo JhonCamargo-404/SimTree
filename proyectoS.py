@@ -17,6 +17,7 @@ class TreeSimulationApp:
         self.potasio_var = tk.DoubleVar()
         # Configuración de la interfaz
         self.setup_ui()
+#Constructor (__init__):       
 #Initialize the application and configure the graphical interface.
 #Create control variables (DoubleVar) for the input values: simulation 
 #time, percentage of nitrogen, phosphorus and potassium in the soil.
@@ -85,8 +86,7 @@ class TreeSimulationApp:
         self.ax.grid(True)        
         # Redibujar el gráfico
         self.canvas.draw()  
-simulate() method:
-
+#simulate() method:
 #It is activated when the "Simulate" button is clicked.
 #Gets the values ​​entered by the user.
 #Call the tree_growth() function to simulate the growth of four types of trees (oak, pine, eucalyptus, and chestnut) over time.
@@ -126,8 +126,8 @@ simulate() method:
         return crecimiento_arbol
     #################################################################################
     #Datos de los arboles
-Tree_growth method (simulation_time, tree_parameters, nutrients):
 
+#Tree_growth method (simulation_time, tree_parameters, nutrients):
 #Simulates the growth of a tree over time.
 #It uses a series of equations and specific parameters for each type of tree.
 #Calculate factors such as photosynthesis, nutrient absorption, competition for light, space and nutrients, etc.
