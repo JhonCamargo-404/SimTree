@@ -17,6 +17,10 @@ class TreeSimulationApp:
         self.potasio_var = tk.DoubleVar()
         # Configuración de la interfaz
         self.setup_ui()
+#Initialize the application and configure the graphical interface.
+#Create control variables (DoubleVar) for the input values: simulation 
+#time, percentage of nitrogen, phosphorus and potassium in the soil.
+#Call the setup_ui() method to configure the interface.
 
     def setup_ui(self):
         # Etiquetas y cajas de entrada
@@ -38,7 +42,10 @@ class TreeSimulationApp:
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.root)
         self.canvas_widget = self.canvas.get_tk_widget()
         self.canvas_widget.grid(row=6, column=0, columnspan=2, padx=10)
-
+#setup_ui() method:
+#Configure the graphical interface with labels, input boxes, and a simulation button.
+#Create a new Matplotlib figure and canvas to display the plot in the interface.
+   
     def simulate(self):
         # Obtener los valores ingresados
         self.ax.clear() 
@@ -78,7 +85,13 @@ class TreeSimulationApp:
         self.ax.grid(True)        
         # Redibujar el gráfico
         self.canvas.draw()  
+simulate() method:
 
+#It is activated when the "Simulate" button is clicked.
+#Gets the values ​​entered by the user.
+#Call the tree_growth() function to simulate the growth of four types of trees (oak, pine, eucalyptus, and chestnut) over time.
+#Plot the growth of each type of tree on a single graph.
+    
     def crecimiento_arbol(self, tiempo_simulacion, parametros_arbol, nutrientes):   
         crecimiento_arbol = [0]            
         tasa_crecimiento_estacional = np.sin(np.linspace(0, tiempo_simulacion, tiempo_simulacion) * 2 * np.pi / 365)
@@ -113,7 +126,13 @@ class TreeSimulationApp:
         return crecimiento_arbol
     #################################################################################
     #Datos de los arboles
+Tree_growth method (simulation_time, tree_parameters, nutrients):
 
+#Simulates the growth of a tree over time.
+#It uses a series of equations and specific parameters for each type of tree.
+#Calculate factors such as photosynthesis, nutrient absorption, competition for light, space and nutrients, etc.
+#Returns a list representing the height of the tree in each year.
+    
     def datos_roble(self):
         # Parámetros específicos del Roble, 23 cm por año
         K1_1 = 0.02
@@ -185,7 +204,11 @@ class TreeSimulationApp:
                             tasa_competicion_luz_4, tasa_competicion_espacio_4, tasa_competicion_nutrientes_4, 
                             edad_maxima_4, altura_maxima_4]
         return parametros_castaño   
-            
+
+#Methods oak_data(), pine_data(), eucalyptus_data(), and chestnut_data() methods:
+#They define the specific parameters for each type of tree. These parameters include 
+#growth rates, competition, maximum age, and maximum height.
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = TreeSimulationApp(root)
