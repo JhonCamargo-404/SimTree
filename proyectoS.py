@@ -163,10 +163,10 @@ class TreeSimulationApp:
         tasa_competicion_nutrientes_3 = 0.005
         edad_maxima_3 = 400
         altura_maxima_3 = 24.0        
-        parametros_pino = [K1_3 , K2_3 , K3_3 , tasa_transpiracion_3,  tasa_fotosintesis_co2_3, tasa_crecimiento_temperatura_3, 
+        parametros_eucalipto = [K1_3 , K2_3 , K3_3 , tasa_transpiracion_3,  tasa_fotosintesis_co2_3, tasa_crecimiento_temperatura_3, 
                             tasa_competicion_luz_3, tasa_competicion_espacio_3, tasa_competicion_nutrientes_3, 
                             edad_maxima_3, altura_maxima_3]
-        return parametros_pino   
+        return parametros_eucalipto   
 
     def datos_castano(self):
         # Parámetros específicos del Castaño, 150 cm por año
@@ -181,10 +181,10 @@ class TreeSimulationApp:
         tasa_competicion_nutrientes_4 = 0.006
         edad_maxima_4 = 1000
         altura_maxima_4 = 30.0        
-        parametros_pino = [K1_4 , K2_4 , K3_4 , tasa_transpiracion_4,  tasa_fotosintesis_co2_4, tasa_crecimiento_temperatura_4, 
+        parametros_castaño = [K1_4 , K2_4 , K3_4 , tasa_transpiracion_4,  tasa_fotosintesis_co2_4, tasa_crecimiento_temperatura_4, 
                             tasa_competicion_luz_4, tasa_competicion_espacio_4, tasa_competicion_nutrientes_4, 
                             edad_maxima_4, altura_maxima_4]
-        return parametros_pino   
+        return parametros_castaño   
             
 if __name__ == "__main__":
     root = tk.Tk()
